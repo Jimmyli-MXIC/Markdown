@@ -125,6 +125,8 @@ plt.close('all')
 
 ## pandas中的绘图函数
 
+> #### Plotting with pandas and seaborn
+
 #### 线性图
 
 ```python
@@ -143,3 +145,107 @@ ax.annotate('Peakvalue (%.3f,%.3f)' % (s.idxmax(),s.values.max()), xy=(s.idxmax(
 ```
 
 ![](/home/jimmyli/Documents/MD/pics/mch8_7.png)
+
+#### 柱形图
+
+```python
+#Series
+fig, axes = plt.subplots(2, 1)
+
+data = Series(abs(randn(16)), index=list('abcdefghijklmnop'))
+
+data.plot(kind='bar', ax=axes[0], color='k', alpha=0.7)		#垂直柱形图
+data.plot(kind='barh', ax=axes[1], color='k', alpha=0.7)	#水平柱形图
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_8.png)
+
+```python
+#DataFrame
+tips = pd.read_csv('examples/tips.csv')
+party_counts = pd.crosstab(tips['day'], tips['size'])
+party_counts = party_counts.loc[:, 2:5]
+# Normalize to sum to 1
+party_pcts = party_counts.div(party_counts.sum(1), axis=0)
+
+party_pcts.plot.bar(stacked = True) 	#stacked堆积
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_10.png)
+
+
+
+```python
+import seaborn as sns
+tips['tip_pct'] = tips['tip'] / (tips['total_bill'] - tips['tip'])
+tips.head()
+sns.barplot(x='tip_pct', y='day', data=tips, orient='h')
+sns.set(style="whitegrid")
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_11.png)
+
+#### 直方图和密度图
+
+```python
+fig, axes = plt.subplots(2, 1, sharex=True)
+axes[0].hist(tips['tip_pct'],bins=50)
+tips['tip_pct'].plot.density()
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_12.png)
+
+```python
+comp1 = np.random.normal(0, 1, size=200)
+comp2 = np.random.normal(10, 2, size=200)
+values = Series(np.concatenate([comp1, comp2]))
+sns.distplot(values, bins=100, color='k')
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_13.png)
+
+#### 散布图
+
+> 散布图是观察两个一维数据序列之间的关系的有效手段
+
+```python
+macro = pd.read_csv('examples/macrodata.csv')
+data = macro[['cpi', 'm1', 'tbilrate', 'unemp']]
+trans_data = np.log(data).diff().dropna()
+trans_data[-5:]
+
+sns.regplot('m1', 'unemp', data=trans_data)
+plt.title('Changes in log %s versus log %s' % ('m1', 'unemp'))
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_14.png)
+
+```python
+sns.pairplot(trans_data, diag_kind='kde', plot_kws={'alpha': 0.2})
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_15.png)
+
+#### Facet Grids and Categorical Data
+
+```python
+sns.factorplot(x='day', y='tip_pct', hue='time', col='smoker',
+               kind='bar', data=tips[tips.tip_pct < 1])
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_16.png)
+
+```python
+sns.factorplot(x='day', y='tip_pct', row='time',
+               col='smoker',
+               kind='bar', data=tips[tips.tip_pct < 1])
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_17.png)
+
+```python
+sns.factorplot(x='tip_pct', y='day', kind='box',
+               data=tips[tips.tip_pct < 0.5])
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_18.png)
