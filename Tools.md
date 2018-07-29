@@ -218,6 +218,22 @@ git remote add origin https://github.com/Your Name/respository.git
 git push -u origin master
 ```
 
+```shell
+git commit -a -m "rename/delete"		#重命名或删除文件之后的操作
+```
+
+```shell
+git log (--pretty=oneline)	#显示提交日志
+git reset --hard HEAD^ / commit id	#HEAD^表示上一版本
+git reflog
+```
+
+
+
+> Git 好站:
+>
+> > [Git教程(易百教程)](https://www.yiibai.com/git/)
+
 ------
 
 
@@ -264,6 +280,6 @@ eg.
 
 ​	　　　　　      `-f`							强制删除用户
 
-> Linux好站:
+> Linux 好站:
 >
 > >  [鳥哥的 Linux 私房菜](http://linux.vbird.org/)　
