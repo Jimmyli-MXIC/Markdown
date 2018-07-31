@@ -76,7 +76,11 @@ cond(yes)->e
 cond(no)->op
 ```
 
-​													更多图标详情参考[Draw Diagrams With Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown/)
+​								更多图标详情参考[Draw Diagrams With Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown/)
+
+> Markdown 好站:
+>
+> > [公式指导手册](https://www.zybuluo.com/codeep/note/163962)
 
 ------
 
@@ -278,6 +282,15 @@ eg.
 
 ​	　　　　　      `-f`							强制删除用户
 
+
+
+`cat /etc/issue`								查看发行版本
+
+
+
 > Linux 好站:
 >
 > >  [鳥哥的 Linux 私房菜](http://linux.vbird.org/)　
+
+------
+
