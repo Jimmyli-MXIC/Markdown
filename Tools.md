@@ -286,7 +286,9 @@ eg.
 
 `cat /etc/issue`								查看发行版本
 
+`echo "内容" >> 文件名`						创建带内容的文本
 
+`cp -r test/ newtest`						将目录"test/"下所有文件复制到新目录
 
 > Linux 好站:
 >
