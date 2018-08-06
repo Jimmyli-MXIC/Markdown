@@ -249,3 +249,8 @@ sns.factorplot(x='tip_pct', y='day', kind='box',
 ```
 
 ![](/home/jimmyli/Documents/MD/pics/mch8_18.png)
+
+> seaborn好站
+>
+> [seaborn](http://seaborn.pydata.org)
+

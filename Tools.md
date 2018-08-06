@@ -290,6 +290,10 @@ eg.
 
 `cp -r test/ newtest`						将目录"test/"下所有文件复制到新目录
 
+`sudo dpkg -i .deb`							安装软件
+
+`sudo apt-get -f install`					安装软件相关依赖
+
 > Linux 好站:
 >
 > >  [鳥哥的 Linux 私房菜](http://linux.vbird.org/)　
