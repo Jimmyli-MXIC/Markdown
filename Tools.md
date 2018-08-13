@@ -294,6 +294,8 @@ eg.
 
 `sudo apt-get -f install`					安装软件相关依赖
 
+`sudo apt-get -f dist-upgrade`
+
 > Linux 好站:
 >
 > >  [鳥哥的 Linux 私房菜](http://linux.vbird.org/)　

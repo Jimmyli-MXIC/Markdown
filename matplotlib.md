@@ -250,6 +250,35 @@ sns.factorplot(x='tip_pct', y='day', kind='box',
 
 ![](/home/jimmyli/Documents/MD/pics/mch8_18.png)
 
+#### 个人实测
+
+```python
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+from pandas import DataFrame, Series
+sns.set(style='darkgrid')
+%matplotlib notebook
+
+sns.lmplot(x='x', y='y',data=tips)
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_19.png)
+
+```python
+sns.catplot(x="accuracy", y="nrof_train_images",kind="bar", 		 			 palette="ch:.25", data=min_imgs)
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_20.png)
+
+```python
+sns.catplot(x="accuracy", y="nrof_train_images",
+           markers=["o"], linestyles=["-"],
+            kind="point", data=min_imgs);
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_21.png)
+
 > seaborn好站
 >
 > [seaborn](http://seaborn.pydata.org)

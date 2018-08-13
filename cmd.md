@@ -7,3 +7,12 @@ $$
 \sigma=\frac{1}{1+e^{-z}}
 $$
 
+$W^TX+b$
+$$
+\frac{|W^TA+b|}{||W||}
+$$
+
+$$
+arg \max_{w,b}\left \{ \min_n(\rm label\cdot({\mit w}^T{\mit x}+b))\cdot\frac{1}{||w||}\right \}
+$$
+
