@@ -279,6 +279,13 @@ sns.catplot(x="accuracy", y="nrof_train_images",
 
 ![](/home/jimmyli/Documents/MD/pics/mch8_21.png)
 
+```python
+sns.catplot(x="nrof_classes", y="accuracy",kind="bar",
+            hue="nrof_images", data=min_lfw)
+```
+
+![](/home/jimmyli/Documents/MD/pics/mch8_22.png)
+
 > seaborn好站
 >
 > [seaborn](http://seaborn.pydata.org)
