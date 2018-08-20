@@ -1,6 +1,7 @@
 #! /bin/bash
 echo "------Begin------"
 git add $1
-git commit --all -m $2
-git push origin master
+git commit --all -m "$2"
+echo "------Push-------"
+expect push.sh
 echo "------End--------"
