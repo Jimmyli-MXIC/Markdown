@@ -76,7 +76,7 @@ cond(yes)->e
 cond(no)->op
 ```
 
-​								更多图标详情参考[Draw Diagrams With Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown/)
+								更多图标详情参考[Draw Diagrams With Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown/)
 
 > Markdown 好站:
 >
@@ -248,19 +248,19 @@ git reflog
 
 `tar`				打包压缩
 
-​            `-c`			归档文件
-
-​            `-x`			解压缩文件
-
-​	　`-t`			查看文件
-
-​            `-z`			gzip压缩文件
-
-​	    `-j`			bzip2压缩文件
-
-​	    `-v`			显示过程					
-
-​	    `-f`			使用存档文件或设备存档
+            `-c`			归档文件
+    
+            `-x`			解压缩文件
+    
+    　`-t`			查看文件
+    
+            `-z`			gzip压缩文件
+    
+        `-j`			bzip2压缩文件
+    
+        `-v`			显示过程					
+    
+        `-f`			使用存档文件或设备存档
 
 eg.
 
@@ -278,9 +278,9 @@ eg.
 
 `userdel user`								删除用户		
 
-​				 `-r`							完全删除家目录	　　
-
-​	　　　　　      `-f`							强制删除用户
+				 `-r`							完全删除家目录	　　
+	
+	　　　　　      `-f`							强制删除用户
 
 
 
@@ -301,4 +301,18 @@ eg.
 > >  [鳥哥的 Linux 私房菜](http://linux.vbird.org/)　
 
 ------
+
+
+
+## adb
+
+#### adb常用命令
+
+`adb shell am start -n <packageName>/<activity>`			启动应用
+
+`adb shell am force-stop <packageName>`						停止应用
+
+`adb shell pm list packages`								查看已安装应用
+
+`adb uninstall <packageName>`								卸载应用
 

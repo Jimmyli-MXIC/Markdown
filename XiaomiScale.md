@@ -1,3 +1,5 @@
+#### 小米体重秤数据说明
+
 | byte | function                                                     |
 | ---- | ------------------------------------------------------------ |
 | 0    | -Bit 0: lbs unit                                             |
@@ -22,3 +24,20 @@
 | ==**Weight Scale**==  <br>0000181d-0000-1000-8000-00805f9b34fb | **Current Time**  <br>00002a2b-0000-1000-8000-00805f9b34fb  <br>**Weight Scale Feature**  <br>00002a9e-0000-1000-8000-00805f9b34fb  <br>==**Weight Measurement**==  <br>00002a9d-0000-1000-8000-00805f9b34fb  <br>**History Weight Measurement [Custom Characteristics]**  <br>00002a2f-0000-3512-2118-0009af100700 |
 | **Custom Service**  <br>00001530-0000-3512-2118-0009af100700 | **Custom Characteristics**  <br>00001531-0000-3512-2118-0009af100700  <br>**Custom Characteristic**  <br>00001532-0000-3512-2118-0009af100700  <br>**Peripheral Preferred Connection Parameters**  <br>00002a04-0000-1000-8000-00805f9b34fb  <br>**Custom Characteristic**  <br>00001542-0000-3512-2118-0009af100700  <br>**Custom Characteristic**  <br>00001543-0000-3512-2118-0009af100700 |
 
+#### 发光二极管和蜂鸣器配置
+
+![](/home/jimmyli/Documents/Markdown/RaspberryPi3.jpg)
+
+LED正极连接GPIO引脚（如图中BCM6)
+
+蜂鸣器正极连接PWM1引脚（图中BCM13)
+
+#### App结构说明
+
+- 蓝牙连接传输数据模块
+
+- websocket传输数据模块
+
+- 外设IO（LED，蜂鸣器）模块
+
+- Camera模块（可包含图片预处理过程）
