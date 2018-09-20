@@ -23,7 +23,7 @@ ax2.scatter(np.arange(30), np.arange(30) + 3 * randn(30))
 
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_2.png)
+![](pics/mch8_2.png)
 
 更为简便的方法 `plt.subplots`
 
@@ -37,7 +37,7 @@ for i in range(2):
 plt.subplots_adjust(wspace=0, hspace=0)
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_1.png)
+![](pics/mch8_1.png)
 
 #### 刻度、标签和图
 
@@ -51,7 +51,7 @@ ax.set_title('My first matplotlib plot')
 ax.set_xlabel('Stages')
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_4.png)
+![](pics/mch8_4.png)
 
 #### 添加图例
 
@@ -63,7 +63,7 @@ ax.plot(randn(1000).cumsum(), 'k.', label='three')
 ax.legend(loc='best')	#添加图例
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_5.png)
+![](pics/mch8_5.png)
 
 #### 注解以及在Subplot上绘图
 
@@ -100,7 +100,7 @@ ax.set_ylim([600, 1800])
 ax.set_title('Important dates in 2008-2009 financial crisis')
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_3.png)
+![](pics/mch8_3.png)
 
 绘图
 
@@ -121,7 +121,7 @@ fig.savefig('figpath.png', dpi=400, bbox_inches='tight')	#保存图片
 plt.close('all')
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_6.png)
+![](pics/mch8_6.png)
 
 ## pandas中的绘图函数
 
@@ -144,7 +144,7 @@ ax.annotate('Peakvalue (%.3f,%.3f)' % (s.idxmax(),s.values.max()), xy=(s.idxmax(
 
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_7.png)
+![](pics/mch8_7.png)
 
 #### 柱形图
 
@@ -158,7 +158,7 @@ data.plot(kind='bar', ax=axes[0], color='k', alpha=0.7)		#垂直柱形图
 data.plot(kind='barh', ax=axes[1], color='k', alpha=0.7)	#水平柱形图
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_8.png)
+![](pics/mch8_8.png)
 
 ```python
 #DataFrame
@@ -171,7 +171,7 @@ party_pcts = party_counts.div(party_counts.sum(1), axis=0)
 party_pcts.plot.bar(stacked = True) 	#stacked堆积
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_10.png)
+![](pics/mch8_10.png)
 
 
 
@@ -183,7 +183,7 @@ sns.barplot(x='tip_pct', y='day', data=tips, orient='h')
 sns.set(style="whitegrid")
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_11.png)
+![](pics/mch8_11.png)
 
 #### 直方图和密度图
 
@@ -193,7 +193,7 @@ axes[0].hist(tips['tip_pct'],bins=50)
 tips['tip_pct'].plot.density()
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_12.png)
+![](pics/mch8_12.png)
 
 ```python
 comp1 = np.random.normal(0, 1, size=200)
@@ -202,7 +202,7 @@ values = Series(np.concatenate([comp1, comp2]))
 sns.distplot(values, bins=100, color='k')
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_13.png)
+![](pics/mch8_13.png)
 
 #### 散布图
 
@@ -218,7 +218,7 @@ sns.regplot('m1', 'unemp', data=trans_data)
 plt.title('Changes in log %s versus log %s' % ('m1', 'unemp'))
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_14.png)
+![](pics/mch8_14.png)
 
 ```python
 sns.pairplot(trans_data, diag_kind='kde', plot_kws={'alpha': 0.2})
@@ -233,7 +233,7 @@ sns.factorplot(x='day', y='tip_pct', hue='time', col='smoker',
                kind='bar', data=tips[tips.tip_pct < 1])
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_16.png)
+![](pics/mch8_16.png)
 
 ```python
 sns.factorplot(x='day', y='tip_pct', row='time',
@@ -241,14 +241,14 @@ sns.factorplot(x='day', y='tip_pct', row='time',
                kind='bar', data=tips[tips.tip_pct < 1])
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_17.png)
+![](pics/mch8_17.png)
 
 ```python
 sns.factorplot(x='tip_pct', y='day', kind='box',
                data=tips[tips.tip_pct < 0.5])
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_18.png)
+![](pics/mch8_18.png)
 
 #### 个人实测
 
@@ -263,13 +263,13 @@ sns.set(style='darkgrid')
 sns.lmplot(x='x', y='y',data=tips)
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_19.png)
+![](pics/mch8_19.png)
 
 ```python
 sns.catplot(x="accuracy", y="nrof_train_images",kind="bar", 		 			 palette="ch:.25", data=min_imgs)
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_20.png)
+![](pics/mch8_20.png)
 
 ```python
 sns.catplot(x="accuracy", y="nrof_train_images",
@@ -277,14 +277,14 @@ sns.catplot(x="accuracy", y="nrof_train_images",
             kind="point", data=min_imgs);
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_21.png)
+![](pics/mch8_21.png)
 
 ```python
 sns.catplot(x="nrof_classes", y="accuracy",kind="bar",
             hue="nrof_images", data=min_lfw)
 ```
 
-![](/home/jimmyli/Documents/MD/pics/mch8_22.png)
+![](pics/mch8_22.png)
 
 > seaborn好站
 >

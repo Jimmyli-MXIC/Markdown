@@ -26,7 +26,7 @@
 
 #### 发光二极管和蜂鸣器配置
 
-![](/home/jimmyli/Documents/Markdown/RaspberryPi3.jpg)
+![](RaspberryPi3.jpg)
 
 LED正极连接GPIO引脚（如图中BCM6)
 
