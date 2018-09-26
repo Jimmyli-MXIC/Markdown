@@ -206,6 +206,10 @@ cond(no)->op
 - **Up** : 光标上移或转入上一单元
 - **Down** :光标下移或转入下一单元
 
+> Jupyter notebook好站:
+>
+> > [Jupyter Notebook的27个秘诀，技巧和快捷键](https://www.zybuluo.com/hanxiaoyang/note/534296)
+
 ------
 
 
