@@ -1,3 +1,5 @@
+
+
 # 常用工具
 
 ## Typora 
@@ -220,20 +222,158 @@ cond(no)->op
 git init
 git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
-git add <文件名＞
-git commit <文件名>/--all -m "description"
+git add <file＞
+git commit <file>/--all -m "description"
 git remote add origin https://github.com/Your Name/respository.git
 git push -u origin master
-```
-
-```shell
-git commit -a -m "rename/delete"		#重命名或删除文件之后的操作
 ```
 
 ```shell
 git log (--pretty=oneline)	#显示提交日志
 git reset --hard HEAD^ / commit id	#HEAD^表示上一版本
 git reflog
+```
+
+#### git clone
+
+```shell
+git clone <repo>	#克隆仓库的命令格式
+```
+
+```shell
+git clone <repo> <directory>	#克隆到指定目录
+```
+
+
+
+### 基本快照
+
+Git的工作就是创建和保存你的项目的快照及与之后的快照进行对比。
+
+#### git diff
+
+- 尚未缓存的改动： **git diff**
+- 查看已缓存的改动： **git diff --cached**
+- 查看已缓存的与未缓存的所有改动： **git diff HEAD**
+- 显示摘要而非整个diff： **git diff --stat**
+
+#### git commit
+
+使用git add命令将想要快照的内容写入缓存区，而执行git commit将缓存区内容添加到仓库中。  
+
+Git为你的每一个提交都记录你的名字与电子邮箱地址，所以第一步需要配置用户名和邮箱地址。
+
+#### git reset HEAD
+
+用于取消已缓存的内容
+
+```shell
+git reset HEAD <file>		
+```
+
+简而言之，执行 git reset HEAD 以取消之前 git add 添加，但不希望包含在下一提交快照中的缓存。
+
+#### git rm
+
+如果只是简单地从工作目录中手工删除文件，运行 `git status` 时就会在 `Changes not staged for commit` 的提示。
+
+要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除，然后提交。可以用以下命令完成此项工作
+
+```shell
+git rm <file>
+git rm -f <file>	#如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项-f
+git rm --cached <file>	
+#如果把文件从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 --cached 选项即可
+git commit -a -m "rename/delete"		#重命名或删除文件之后的操作
+```
+
+#### git mv
+
+git mv 命令用于移动或重命名一个文件、目录、软连接。
+
+
+
+### Git 分支管理
+
+```shell
+git branch (branchname)		#创建分支命令
+git checkout (branchname)	#切换分支命令
+```
+
+当你切换分支的时候，Git 会用该分支的最后提交的快照替换你的工作目录的内容， 所以多个分支不需要多个目录
+
+```shell
+git merge	#合并分支命令，可以多次合并到统一分支， 也可以选择在合并之后直接删除被并入的分支
+```
+
+#### 列出分支
+
+```shell
+git branch
+```
+
+当你执行 git init 的时候，缺省情况下 Git 就会为你创建"master"分支。
+
+如果我们要手动创建一个分支。执行 git branch (branch name) 即可。
+
+```shell
+git checkout -b (branchname)	#创建新分支并立即切换到该分支下，从而在该分支中操作
+```
+
+#### 删除分支
+
+```shell
+git branch -d (branchname)
+```
+
+#### 合并分支
+
+```shell
+git merge (branchname)
+```
+
+#### 合并冲突
+
+合并并不仅仅是简单的文件添加、移除的操作，Git 也会合并修改。
+
+我们将前一个分支合并到 "master" 分支，一个合并冲突就出现了，接下来我们需要手动去修改它。
+
+在 Git 中，我们可以用 git add 要告诉 Git 文件冲突已经解决
+
+
+
+### Git 查看提交历史
+
+```shell
+git log
+git log --oneline	#查看历史记录的简洁版本
+git log --oneline --graph	#用--graph选项，开启拓扑图选项
+git log --reverse --oneline		#--reverse逆向显示
+git log --autor=name --onelin -5	#查找指定用户的提交日志命令
+```
+
+
+
+### Git 远程仓库(Github)
+
+```shell
+git remote		#查看当前的远程库
+```
+
+#### 提取远程仓库
+
+```shell
+git fetch		#从远程仓库下载新分支与数据，该命令执行完成后需要执行git merge远程分支到现在分支
+git merge		#从远端仓库提取数据并尝试合并到当前分支
+#该命令就是执行在git fetch之后紧接着执行git merge远程分支到你的所在的任意分支。
+```
+
+假设你配置好了一个远程仓库，并且你想要提取更新的数据，你可以首先执行 **git fetch [alias]** 告诉 Git 去获取它有你没有的数据，然后你可以执行 **git merge [alias]/[branch]** 以将服务器上的任何更新（假设有人这时候推送到服务器了）合并到你的当前分支。
+
+#### 推送到远程仓库
+
+```shell
+git push [alias] [branch]
 ```
 
 
@@ -276,7 +416,7 @@ eg.
 
 > 可参考[tar命令详解](https://blog.csdn.net/freeking101/article/details/51480295)
 
-#### 用户及用户组管理
+用户及用户组管理
 
 `useradd user`								添加用户
 
