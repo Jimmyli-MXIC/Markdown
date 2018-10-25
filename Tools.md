@@ -314,13 +314,13 @@ git branch
 
 当你执行 git init 的时候，缺省情况下 Git 就会为你创建"master"分支。
 
-如果我们要手动创建一个分支。执行 git branch (branch name) 即可。
+如果我们g要手动创建一个分支。执行 git branch (branch name) 即可。
 
 ```shell
 git checkout -b (branchname)	#创建新分支并立即切换到该分支下，从而在该分支中操作
 ```
 
-#### 删除分支
+#### 删除分支git
 
 ```shell
 git branch -d (branchname)
@@ -364,6 +364,8 @@ git remote		#查看当前的远程库
 
 ```shell
 git fetch		#从远程仓库下载新分支与数据，该命令执行完成后需要执行git merge远程分支到现在分支
+git pull
+git log origin/[branch]
 git merge		#从远端仓库提取数据并尝试合并到当前分支
 #该命令就是执行在git fetch之后紧接着执行git merge远程分支到你的所在的任意分支。
 ```
@@ -374,6 +376,36 @@ git merge		#从远端仓库提取数据并尝试合并到当前分支
 
 ```shell
 git push [alias] [branch]
+```
+
+
+
+### Git 服务器搭建
+
+```shell
+sudo adduser git	#创建一个git用户，用来运行git服务
+
+#创建证书登录	收集所有用户的公钥，就是他们自己的id_rsa.pub文件
+cd /home/git/
+mkdir .ssh
+chmod 755 .ssh
+touch .ssh/authorized_keys
+chmod 664 .ssh/authorized_keys
+
+#初始化Git仓库
+cd /home
+mkdir gitrepo
+chown git:git gitrepo/
+cd gitrepo
+
+git init --bare sample.git	#新建仓库从这里开始
+chown -R git:git sample.git	
+
+#克隆仓库
+git clone git@192.168.164.196:/home/gitrepo/sample.git
+
+#配置远程仓库
+git remote add tedev0 git@192.168.164.196:/home/gitrepo/sample.git
 ```
 
 
