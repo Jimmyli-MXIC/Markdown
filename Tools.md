@@ -413,6 +413,8 @@ git remote add tedev0 git@192.168.164.196:/home/gitrepo/sample.git
 > Git 好站:
 >
 > > [Git教程(易百教程)](https://www.yiibai.com/git/)
+> >
+> > [Git官方教程](https://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80)
 
 ------
 
@@ -491,4 +493,28 @@ eg.
 `adb shell pm list packages`								查看已安装应用
 
 `adb uninstall <packageName>`								卸载应用
+
+------
+
+
+
+## Shell
+
+`chmod +x ./test.sh`						使脚本具有执行权限
+
+------
+
+
+
+## Screen
+
+`screen -S name`							创建一个名为name的新回话
+
+`ctrl +a +d`								回到主回话
+
+`exit`									退出screen
+
+`screen -r name`							恢复创建的回话
+
+`screen -ls`								查看已创建的回话
 
